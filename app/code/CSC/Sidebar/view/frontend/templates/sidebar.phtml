@@ -3,7 +3,8 @@ $categories = $this->getStoreCategories(true,false,true);
 $categoryHelper = $this->getCategoryHelper();
 ?>
 <h3><?php echo __('Categories'); ?></h3>
-<ul>
+<div class="filter-options-content">
+
 <?php
 foreach($categories as $category):
      if (!$category->getIsActive()) {
@@ -11,11 +12,12 @@ foreach($categories as $category):
      }
 
 ?>
-<li><a href="<?php echo $categoryHelper->getCategoryUrl($category) ?>"><?php echo $category->getName() ?></a></li>
+<ol class="items">
+<li class="item"><a href="<?php echo $categoryHelper->getCategoryUrl($category) ?>"><?php echo $category->getName() ?></a></li>
 <?php  
 if($childrenCategories = $this->getChildCategories($category)):
 ?>
-<ul>
+<ol class="child-categories">
 <?php
 foreach($childrenCategories as $childrenCategory):
      if (!$childrenCategory->getIsActive()) {
@@ -26,10 +28,11 @@ foreach($childrenCategories as $childrenCategory):
 <?php
 endforeach;
 ?>
-</ul>
+</ol>
+</ol>
 <?php
 endif;
 endforeach;
 ?>
-</ul>
+</div>
 
