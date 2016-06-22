@@ -1,0 +1,8 @@
+.product-info-price>div>.old-price>span>.price-wrapper,
+.product-item-details>div>.old-price>span>.price-wrapper{
+	text-decoration: line-through;
+}
+
+.product-reviews-summary, .sku{
+	display: none;
+}
